@@ -38,13 +38,24 @@ export function HeroSection() {
         Наша задача — минимизировать количество обмана в играх, и мы с этим справляемся.
       </p>
 
-      <div className="mb-8 inline-flex items-center gap-4 rounded-2xl bg-[#141414] border border-[#262626] px-6 py-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-600/20">
-          <Icon name="TrendingUp" size={22} className="text-violet-400" />
+      <div className="mb-8 inline-flex flex-wrap justify-center items-center gap-3">
+        <div className="inline-flex items-center gap-4 rounded-2xl bg-[#141414] border border-[#262626] px-6 py-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-600/20">
+            <Icon name="TrendingUp" size={22} className="text-violet-400" />
+          </div>
+          <div className="text-left">
+            <p className="text-3xl font-bold text-white tabular-nums">{count}</p>
+            <p className="text-xs text-gray-400">сделок за сегодня</p>
+          </div>
         </div>
-        <div className="text-left">
-          <p className="text-3xl font-bold text-white tabular-nums">{count}</p>
-          <p className="text-xs text-gray-400">сделок за сегодня</p>
+        <div className="inline-flex items-center gap-4 rounded-2xl bg-[#141414] border border-[#262626] px-6 py-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-600/20">
+            <Icon name="Users" size={22} className="text-green-400" />
+          </div>
+          <div className="text-left">
+            <p className="text-3xl font-bold text-white tabular-nums">5 000+</p>
+            <p className="text-xs text-gray-400">довольных покупателей</p>
+          </div>
         </div>
       </div>
 
