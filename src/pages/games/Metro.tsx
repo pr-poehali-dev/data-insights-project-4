@@ -10,7 +10,8 @@ export default function MetroPage() {
         {
           title: "Меч",
           description: "Продажа меча через безопасную сделку с гарантом.",
-          price: "8 000 ₽",
+          price: "6 000 ₽",
+          oldPrice: "8 000 ₽",
           icon: "Swords",
           badge: "Оружие",
         },

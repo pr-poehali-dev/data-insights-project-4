@@ -7,6 +7,7 @@ type ServiceCard = {
   title: string
   description: string
   price: string
+  oldPrice?: string
   icon: string
   badge?: string
 }
@@ -39,7 +40,17 @@ function ServiceCardItem({ s }: { s: ServiceCard }) {
       </div>
       <h3 className="mb-2 text-base font-semibold text-white">{s.title}</h3>
       <p className="mb-4 text-sm text-gray-400 flex-1">{s.description}</p>
-      <div className="mb-4 text-lg font-bold text-violet-400">{s.price}</div>
+      <div className="mb-4 flex items-center gap-2 flex-wrap">
+        <span className="text-lg font-bold text-violet-400">{s.price}</span>
+        {s.oldPrice && (
+          <span className="text-sm text-gray-500 line-through">{s.oldPrice}</span>
+        )}
+        {s.oldPrice && (
+          <span className="rounded-full bg-red-500/15 px-2 py-0.5 text-[10px] font-medium text-red-400 border border-red-500/20">
+            Распродажа
+          </span>
+        )}
+      </div>
       <Button
         className="w-full rounded-xl bg-violet-600 hover:bg-violet-700 text-white"
         asChild
