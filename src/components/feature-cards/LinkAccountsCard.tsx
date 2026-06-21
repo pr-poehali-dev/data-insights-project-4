@@ -23,8 +23,8 @@ type GuarantOffline = Guarant & { online: boolean }
 const guarants: GuarantOffline[] = [
   { name: "Виталий", id: "52057465205", tg: "@Ya_igor_384", initials: "В", color: "bg-violet-600", online: true },
   { name: "Игнат", id: "52435182628", tg: "@gumimin5", initials: "И", color: "bg-teal-600", online: true },
-  { name: "Гарант 3", id: "", tg: "", initials: "Г", color: "bg-gray-600", online: false },
-  { name: "Гарант 4", id: "", tg: "", initials: "Г", color: "bg-gray-600", online: false },
+  { name: "Артемий", id: "", tg: "", initials: "А", color: "bg-gray-600", online: false },
+  { name: "Людмила", id: "", tg: "", initials: "Л", color: "bg-gray-600", online: false },
 ]
 
 const randomDeals = () => Math.floor(Math.random() * (500 - 200 + 1)) + 200
