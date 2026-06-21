@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 import Icon from "@/components/ui/icon"
 
 const games = [
-  { name: "Dota 2", icon: "Swords", path: "/games/dota2" },
   { name: "Metro Royale", icon: "Train", path: "/games/metro" },
   { name: "Black Russia", icon: "Car", path: "/games/blackrussia" },
   { name: "CS2", icon: "Crosshair", path: "/games/cs2" },

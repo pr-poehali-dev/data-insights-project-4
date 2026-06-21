@@ -5,7 +5,7 @@ export default function PUBGPage() {
     <GamePageLayout
       title="PUBG"
       icon="Target"
-      description="Безопасная покупка и продажа внутриигровой валюты и аккаунтов PUBG через гаранта."
+      description="Безопасная покупка и продажа аккаунтов и валюты PUBG через гаранта."
       services={[
         {
           title: "Покупка валюты",
@@ -13,12 +13,6 @@ export default function PUBGPage() {
           price: "Цена договорная",
           icon: "Coins",
           badge: "Популярное",
-        },
-        {
-          title: "Продажа валюты",
-          description: "Продайте накопленную валюту PUBG безопасно — без риска обмана.",
-          price: "Цена договорная",
-          icon: "ArrowRightLeft",
         },
         {
           title: "Покупка аккаунта",

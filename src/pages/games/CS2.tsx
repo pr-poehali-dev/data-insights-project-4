@@ -5,7 +5,7 @@ export default function CS2Page() {
     <GamePageLayout
       title="CS2"
       icon="Crosshair"
-      description="Безопасная покупка и продажа скинов, валюты и аккаунтов CS2 под защитой гаранта."
+      description="Безопасная покупка и продажа аккаунтов и валюты CS2 под защитой гаранта."
       services={[
         {
           title: "Покупка валюты",
@@ -13,12 +13,6 @@ export default function CS2Page() {
           price: "Цена договорная",
           icon: "Coins",
           badge: "Популярное",
-        },
-        {
-          title: "Продажа валюты",
-          description: "Продайте баланс или скины CS2 безопасно — гарант защищает обе стороны.",
-          price: "Цена договорная",
-          icon: "ArrowRightLeft",
         },
         {
           title: "Покупка аккаунта",

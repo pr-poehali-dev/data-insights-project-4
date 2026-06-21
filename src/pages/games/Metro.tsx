@@ -5,7 +5,7 @@ export default function MetroPage() {
     <GamePageLayout
       title="Metro Royale"
       icon="Train"
-      description="Буст баланса, сопровождение в подземке и безопасная торговля ресурсами Metro Royale."
+      description="Буст баланса и сопровождение в подземке Metro Royale под защитой гаранта."
       services={[
         {
           title: "Буст баланса",
@@ -32,24 +32,6 @@ export default function MetroPage() {
           description: "Купите внутриигровую валюту Metro Royale через безопасную сделку с гарантом.",
           price: "Цена договорная",
           icon: "Coins",
-        },
-        {
-          title: "Продажа валюты",
-          description: "Продайте накопленные монеты и ресурсы Metro Royale безопасно.",
-          price: "Цена договорная",
-          icon: "ArrowRightLeft",
-        },
-        {
-          title: "Покупка аккаунта",
-          description: "Готовый прокачанный аккаунт Metro Royale с нужными характеристиками.",
-          price: "Цена договорная",
-          icon: "UserCheck",
-        },
-        {
-          title: "Продажа аккаунта",
-          description: "Продайте аккаунт Metro Royale — гарант защитит вас от мошенников.",
-          price: "Цена договорная",
-          icon: "UserMinus",
         },
       ]}
     />

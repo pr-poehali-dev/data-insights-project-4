@@ -21,12 +21,6 @@ export default function BlackRussiaPage() {
           icon: "Coins",
         },
         {
-          title: "Продажа валюты",
-          description: "Продайте накопленную валюту Black Russia — гарант защитит сделку.",
-          price: "Цена договорная",
-          icon: "ArrowRightLeft",
-        },
-        {
           title: "Покупка аккаунта",
           description: "Готовый аккаунт Black Russia с имуществом, машинами и балансом.",
           price: "Цена договорная",
