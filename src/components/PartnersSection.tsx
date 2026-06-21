@@ -4,6 +4,11 @@ const games = [
   { name: "Dota 2", icon: "Swords" },
   { name: "Metro Royale", icon: "Train" },
   { name: "Black Russia", icon: "Car" },
+  { name: "CS2", icon: "Crosshair" },
+  { name: "GTA Online", icon: "Map" },
+  { name: "Rust", icon: "Flame" },
+  { name: "PUBG", icon: "Target" },
+  { name: "Standoff 2", icon: "Shield" },
 ]
 
 export function PartnersSection() {
@@ -20,6 +25,10 @@ export function PartnersSection() {
             <span className="text-sm font-semibold text-white">{game.name}</span>
           </div>
         ))}
+        <div className="flex items-center gap-3 rounded-xl bg-[#141414] border border-[#262626] border-dashed px-5 py-3">
+          <Icon name="Plus" size={18} className="text-gray-600" />
+          <span className="text-sm font-semibold text-gray-500">Скоро больше</span>
+        </div>
       </div>
     </section>
   )
