@@ -2,6 +2,8 @@ import { Header } from "@/components/Header"
 import { HeroSection } from "@/components/HeroSection"
 import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
+import { HowItWorksSection } from "@/components/HowItWorksSection"
+import { BecomeGuarantSection } from "@/components/BecomeGuarantSection"
 
 export default function Index() {
   return (
@@ -10,9 +12,11 @@ export default function Index() {
       <HeroSection />
       <PartnersSection />
       <FeaturesSection />
+      <HowItWorksSection />
+      <BecomeGuarantSection />
       <footer className="py-8 text-center text-sm text-gray-400">
-        От безопасных платежей до синхронизации счетов —{" "}
-        <span className="font-medium text-white">всё работает в одном месте.</span>
+        Guarant Trade Games — безопасный трейд внутриигровых ресурсов.{" "}
+        <span className="font-medium text-white">Минимизируем обман в играх.</span>
       </footer>
     </main>
   )
