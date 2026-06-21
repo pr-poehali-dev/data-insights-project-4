@@ -14,6 +14,12 @@ const prices = [
     price: "250 ₽",
     icon: "Gem",
   },
+  {
+    title: "Обмен донатных предметов",
+    desc: "Гарант для донатных и премиальных вещей",
+    price: "500 ₽",
+    icon: "Crown",
+  },
 ]
 
 export function PaymentRolesCard() {
