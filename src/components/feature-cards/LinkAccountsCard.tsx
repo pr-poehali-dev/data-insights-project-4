@@ -18,9 +18,13 @@ type Guarant = {
   color: string
 }
 
-const guarants: Guarant[] = [
-  { name: "Виталий", id: "52057465205", tg: "@Ya_igor_384", initials: "В", color: "bg-violet-600" },
-  { name: "Игнат", id: "52435182628", tg: "@gumimin5", initials: "И", color: "bg-teal-600" },
+type GuarantOffline = Guarant & { online: boolean }
+
+const guarants: GuarantOffline[] = [
+  { name: "Виталий", id: "52057465205", tg: "@Ya_igor_384", initials: "В", color: "bg-violet-600", online: true },
+  { name: "Игнат", id: "52435182628", tg: "@gumimin5", initials: "И", color: "bg-teal-600", online: true },
+  { name: "Гарант 3", id: "", tg: "", initials: "Г", color: "bg-gray-600", online: false },
+  { name: "Гарант 4", id: "", tg: "", initials: "Г", color: "bg-gray-600", online: false },
 ]
 
 const randomDeals = () => Math.floor(Math.random() * (500 - 200 + 1)) + 200
@@ -35,9 +39,9 @@ export function LinkAccountsCard() {
         <Icon name="ShieldCheck" size={20} className="text-violet-400" />
       </div>
 
-      <h3 className="mb-2 text-lg font-semibold text-white">Гаранты онлайн</h3>
+      <h3 className="mb-2 text-lg font-semibold text-white">Гаранты</h3>
       <p className="mb-4 text-sm text-gray-400">
-        В сети всегда 2 проверенных гаранта. Выберите свободного и проведите сделку без риска
+        Выберите свободного гаранта онлайн и проведите сделку без риска
       </p>
 
       <div className="mt-auto space-y-2 rounded-xl bg-[#1a1a1a] border border-[#262626] p-3">
@@ -48,20 +52,26 @@ export function LinkAccountsCard() {
                 <Avatar className="h-9 w-9">
                   <AvatarFallback className={`${g.color} text-white text-xs`}>{g.initials}</AvatarFallback>
                 </Avatar>
-                <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-green-500 border-2 border-[#0f0f0f]" />
+                <span className={`absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-[#0f0f0f] ${g.online ? "bg-green-500" : "bg-gray-600"}`} />
               </div>
               <div>
-                <p className="text-sm font-medium text-white">{g.name}</p>
-                <p className="text-xs text-gray-500">{deals[index]} сделок</p>
+                <p className={`text-sm font-medium ${g.online ? "text-white" : "text-gray-500"}`}>{g.name}</p>
+                <p className="text-xs text-gray-500">
+                  {g.online ? `${deals[index]} сделок` : "не в сети"}
+                </p>
               </div>
             </div>
-            <Button
-              size="sm"
-              className="rounded-full bg-violet-600 hover:bg-violet-700 text-white h-7 px-3 text-xs"
-              onClick={() => setSelected(g)}
-            >
-              Купить
-            </Button>
+            {g.online ? (
+              <Button
+                size="sm"
+                className="rounded-full bg-violet-600 hover:bg-violet-700 text-white h-7 px-3 text-xs"
+                onClick={() => setSelected(g)}
+              >
+                Купить
+              </Button>
+            ) : (
+              <span className="text-xs text-gray-600 px-2">офлайн</span>
+            )}
           </div>
         ))}
       </div>
