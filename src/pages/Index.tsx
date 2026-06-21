@@ -4,6 +4,7 @@ import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
 import { HowItWorksSection } from "@/components/HowItWorksSection"
 import { BecomeGuarantSection } from "@/components/BecomeGuarantSection"
+import { ScheduleSection } from "@/components/ScheduleSection"
 import { SupportChat } from "@/components/SupportChat"
 
 export default function Index() {
@@ -15,6 +16,7 @@ export default function Index() {
       <FeaturesSection />
       <HowItWorksSection />
       <BecomeGuarantSection />
+      <ScheduleSection />
       <footer className="py-8 text-center text-sm text-gray-400">
         Guarant Trade Games — безопасный трейд внутриигровых ресурсов.{" "}
         <span className="font-medium text-white">Минимизируем обман в играх.</span>
