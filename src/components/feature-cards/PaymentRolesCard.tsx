@@ -5,7 +5,7 @@ const prices = [
   {
     title: "Обмен вещей",
     desc: "Безопасный обмен обычными вещами в Metro Royale",
-    price: "50 ₽",
+    price: "250 ₽",
     icon: "Repeat",
   },
   {
