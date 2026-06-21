@@ -11,14 +11,48 @@ type ServiceCard = {
   badge?: string
 }
 
+type ServiceGroup = {
+  groupTitle: string
+  services: ServiceCard[]
+}
+
 type GamePageLayoutProps = {
   title: string
   icon: string
   description: string
-  services: ServiceCard[]
+  services?: ServiceCard[]
+  groups?: ServiceGroup[]
 }
 
-export function GamePageLayout({ title, icon, description, services }: GamePageLayoutProps) {
+function ServiceCardItem({ s }: { s: ServiceCard }) {
+  return (
+    <div className="flex flex-col rounded-2xl bg-[#141414] border border-[#262626] p-6 hover:border-violet-500/50 transition-all">
+      <div className="mb-4 flex items-start justify-between">
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1f1f1f] border border-[#2a2a2a]">
+          <Icon name={s.icon} size={20} className="text-violet-400" />
+        </div>
+        {s.badge && (
+          <span className="rounded-full bg-violet-500/15 px-2 py-0.5 text-[10px] font-medium text-violet-400 border border-violet-500/20">
+            {s.badge}
+          </span>
+        )}
+      </div>
+      <h3 className="mb-2 text-base font-semibold text-white">{s.title}</h3>
+      <p className="mb-4 text-sm text-gray-400 flex-1">{s.description}</p>
+      <div className="mb-4 text-lg font-bold text-violet-400">{s.price}</div>
+      <Button
+        className="w-full rounded-xl bg-violet-600 hover:bg-violet-700 text-white"
+        asChild
+      >
+        <a href="https://t.me/GuarantTradeGames" target="_blank" rel="noreferrer">
+          Заказать <Icon name="ArrowUpRight" size={15} className="ml-1" />
+        </a>
+      </Button>
+    </div>
+  )
+}
+
+export function GamePageLayout({ title, icon, description, services, groups }: GamePageLayoutProps) {
   const navigate = useNavigate()
 
   return (
@@ -52,36 +86,30 @@ export function GamePageLayout({ title, icon, description, services }: GamePageL
 
       {/* Services */}
       <section className="px-4 pb-16 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((s, i) => (
-            <div
-              key={i}
-              className="flex flex-col rounded-2xl bg-[#141414] border border-[#262626] p-6 hover:border-violet-500/50 transition-all"
-            >
-              <div className="mb-4 flex items-start justify-between">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1f1f1f] border border-[#2a2a2a]">
-                  <Icon name={s.icon} size={20} className="text-violet-400" />
+        {groups ? (
+          <div className="flex flex-col gap-10">
+            {groups.map((g, gi) => (
+              <div key={gi}>
+                <h2 className="mb-5 text-lg font-semibold text-white flex items-center gap-2">
+                  <span className="h-px flex-1 bg-[#262626]" />
+                  <span>{g.groupTitle}</span>
+                  <span className="h-px flex-1 bg-[#262626]" />
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {g.services.map((s, i) => (
+                    <ServiceCardItem key={i} s={s} />
+                  ))}
                 </div>
-                {s.badge && (
-                  <span className="rounded-full bg-violet-500/15 px-2 py-0.5 text-[10px] font-medium text-violet-400 border border-violet-500/20">
-                    {s.badge}
-                  </span>
-                )}
               </div>
-              <h3 className="mb-2 text-base font-semibold text-white">{s.title}</h3>
-              <p className="mb-4 text-sm text-gray-400 flex-1">{s.description}</p>
-              <div className="mb-4 text-lg font-bold text-violet-400">{s.price}</div>
-              <Button
-                className="w-full rounded-xl bg-violet-600 hover:bg-violet-700 text-white"
-                asChild
-              >
-                <a href="https://t.me/GuarantTradeGames" target="_blank" rel="noreferrer">
-                  Заказать <Icon name="ArrowUpRight" size={15} className="ml-1" />
-                </a>
-              </Button>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {(services ?? []).map((s, i) => (
+              <ServiceCardItem key={i} s={s} />
+            ))}
+          </div>
+        )}
       </section>
 
       <SupportChat />
